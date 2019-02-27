@@ -1,0 +1,9 @@
+language: c
+sudo: required
+before_install:
+  - sudo apt-get install gfortran
+script:
+  - gfortran -fprofile-arcs -ftest-coverage -O0 circle_class.f90 -o circle_class
+  - ./circle_class
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
