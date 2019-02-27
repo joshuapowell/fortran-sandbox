@@ -1,15 +1,31 @@
-language:
-  - c
+language: 
+  - cpp
+
+matrix:
+  include:
+    - os: linux
+      compiler: clang
+      addons: &clang34
+        apt:
+          packages:
+            - clang
+            - cmake3
+            - gfortran
+            - swig
+      env:
+        - FC="gfortran"
+        - FSFLAG=-I
+        - CXX="g++"
+        - CC="gcc"
+        # - CXX_COMPILER='clang++'
+        # - C_COMPILER='clang'
+        # - Fortran_COMPILER='gfortran'
+        # - BUILD_TYPE='Release'
+        # - PYTHON='--three'
+        # - COVERAGE=OFF
 before_install:
-  - apt-get install gfortran
   - gem install funit
-  - export FC="gfortran"
-  - export FSFLAG=-I
-  - export CXX="g++"
-  - export CC="gcc"
-os:
-  - linux
 script:
-  - gfortran -fprofile-arcs -ftest-coverage -O0 circle_class.f90 -o circle_class
+  - funit circle_class
   - ./circle_class
 
