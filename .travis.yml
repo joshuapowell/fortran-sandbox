@@ -27,5 +27,6 @@ before_install:
   - gem install funit
 script:
   - funit circle_class
+  - ls
   - ./circle_class
 
