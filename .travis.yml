@@ -1,9 +1,15 @@
-language: c
-sudo: required
+language:
+  - c
 before_install:
-  - sudo apt-get install gfortran
+  - apt-get install gfortran
+  - gem install funit
+  - export FC="gfortran"
+  - export FSFLAG=-I
+  - export CXX="g++"
+  - export CC="gcc"
+os:
+  - linux
 script:
   - gfortran -fprofile-arcs -ftest-coverage -O0 circle_class.f90 -o circle_class
   - ./circle_class
-#after_success:
-#  - bash <(curl -s https://codecov.io/bash)
+
