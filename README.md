@@ -1,3 +1,7 @@
+<a href="https://travis-ci.org/joshuapowell/fortran-sandbox" target="_blank">
+<img src="https://travis-ci.org/joshuapowell/fortran-sandbox.svg?branch=master" />
+</a>
+
 # Fortran Sandbox
 
 ## Compile
