@@ -38,9 +38,13 @@ gem install funit
 ```
 
 After installation ensure you've set the FC environment variable to your
-fortran compiler.
+fortran compiler. In addition, you will need to make sure other flags are
+properly set as well (I can't explain this part yet.).
 ```
 export FC="gfortran"
+export FSFLAG=-I
+export CXX="g++"
+export CC="gcc"
 ```
 
 https://jblevins.org/log/funit
