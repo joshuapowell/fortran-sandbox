@@ -1,0 +1,20 @@
+
+# makefile to compile TestRunner.f90
+#
+# funit generated this file on 2019-02-26 20:45:15 -0500.
+
+OBJ=circle_class_fun.o circle_class.o TestRunner.o
+LDFLAGS= -lstdc++
+
+all:testrunner
+
+testrunner: $(OBJ)
+	gfortran   -o TestRunner $(OBJ) $(LDFLAGS)
+
+TestRunner.o: TestRunner.f90 circle_class_fun.o 
+	(cd .; gfortran  -I. -c TestRunner.f90)
+circle_class_fun.o: circle_class_fun.f90 circle_class.o 
+	(cd .; gfortran  -I. -c circle_class_fun.f90)
+circle_class.o: circle_class.f90  
+	(cd .; gfortran  -I. -c circle_class.f90)
+  
