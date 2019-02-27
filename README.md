@@ -27,6 +27,12 @@ GNU Fortran (Homebrew GCC 8.3.0) 8.3.0
 - [ ] Add alternative `gfortran` compile instructions.
 
 ## Testing with fUnit
+Example unit test runner
+```
+funit circle_class
+```
+
+### Installing Unit Testing Software
 `fUnit` is a Fortran unit testing framework developed by engineers at NASA. It 
 requires a Fortran 95 compiler and it is designed for testing routines 
 contained in modules. fUnit is written in Ruby and is distributed as a Ruby 
